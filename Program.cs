@@ -16,32 +16,39 @@ string[] array = CreateArray(size);
 int count = FindArray(array);
 string[] arrayNew = new string[count];
 
-string[] CreateArray (int size) // Создаем и заполняем массив
+string[] CreateArray(int size) // Создаем и заполняем массив
 {
-    string[] array=new string[size];
+    string[] array = new string[size];
     for (int i = 0; i < size; i++)
     {
         Console.Write($"Введите текст массива {i} - ");
-        array[i]= Console.ReadLine();
+        array[i] = Console.ReadLine();
     }
     return array;
 }
 int FindArray(string[] array) // Поиск удовлетворяющего запроса. Длина элемента массива <= 3
 {
-    int count =0;
+    int count = 0;
     for (int i = 0; i < size; i++)
     {
-       if (array[i].Length <= 3) count++;
+        if (array[i].Length <= 3) count++;
     }
     return count;
 }
-void WriteNewArray (string[] array, string[] arrayNew) // Запись нового массива
+void WriteNewArray(string[] array, string[] arrayNew) // Запись нового массива
 {
-    
+    count = 0;
+    for (int i = 0; i < size; i++)
+    {
+        if (array[i].Length <= 3)
+        {
+            arrayNew[count] = array[i];
+            count++;
+        }
+    }
 
-Console.Write($"Массив: [{string.Join(",", array)}] -> [{string.Join(",", arrayNew)}]");
+    Console.Write($"Массив: [{string.Join(",", array)}] -> [{string.Join(",", arrayNew)}]");
 }
 
-WriteNewArray (array, arrayNew);
-
+WriteNewArray(array, arrayNew);
 Console.ReadKey();
