@@ -14,7 +14,7 @@ Console.Write("Введите размер массива: ");
 int size = Convert.ToInt32(Console.ReadLine());
 string[] array = CreateArray(size);
 int count = FindArray(array);
-
+string[] arrayNew = new string[count];
 
 string[] CreateArray (int size) // Создаем и заполняем массив
 {
@@ -35,7 +35,13 @@ int FindArray(string[] array) // Поиск удовлетворяющего з�
     }
     return count;
 }
+void WriteNewArray (string[] array, string[] arrayNew) // Запись нового массива
+{
+    
 
+Console.Write($"Массив: [{string.Join(",", array)}] -> [{string.Join(",", arrayNew)}]");
+}
 
-Console.Write($"Массив: [{string.Join(",", array)}]");
+WriteNewArray (array, arrayNew);
+
 Console.ReadKey();
