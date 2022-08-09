@@ -13,6 +13,8 @@ Console.Clear();
 Console.Write("Введите размер массива: ");
 int size = Convert.ToInt32(Console.ReadLine());
 string[] array = CreateArray(size);
+int count = FindArray(array);
+
 
 string[] CreateArray (int size) // Создаем и заполняем массив
 {
@@ -24,8 +26,16 @@ string[] CreateArray (int size) // Создаем и заполняем масс
     }
     return array;
 }
+int FindArray(string[] array) // Поиск удовлетворяющего запроса. Длина элемента массива <= 3
+{
+    int count =0;
+    for (int i = 0; i < size; i++)
+    {
+       if (array[i].Length <= 3) count++;
+    }
+    return count;
+}
+
 
 Console.Write($"Массив: [{string.Join(",", array)}]");
-
-
 Console.ReadKey();
