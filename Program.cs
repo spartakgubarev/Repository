@@ -12,20 +12,20 @@
 Console.Clear();
 Console.Write("Введите размер массива: ");
 int size = Convert.ToInt32(Console.ReadLine());
-string[] array = new string[size];
-int count = 0;
+string[] array = CreateArray(size);
 
-void CreateArray (string [] array) // Заполняем созданный массив
+string[] CreateArray (int size) // Создаем и заполняем массив
 {
+    string[] array=new string[size];
     for (int i = 0; i < size; i++)
     {
         Console.Write($"Введите текст массива {i} - ");
         array[i]= Console.ReadLine();
     }
+    return array;
 }
 
-CreateArray(array);
+Console.Write($"Массив: [{string.Join(",", array)}]");
 
-Console.WriteLine($"Массив: [{string.Join(",", array)}]");
 
 Console.ReadKey();
