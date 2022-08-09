@@ -9,3 +9,23 @@
 // ["1234", "1567", "-2", "computer science"] -> ["-2"]
 // ["Russia", "Denmark", "Kazan"] -> []
 
+Console.Clear();
+Console.Write("Введите размер массива: ");
+int size = Convert.ToInt32(Console.ReadLine());
+string[] array = new string[size];
+int count = 0;
+
+void CreateArray (string [] array) // Заполняем созданный массив
+{
+    for (int i = 0; i < size; i++)
+    {
+        Console.Write($"Введите текст массива {i} - ");
+        array[i]= Console.ReadLine();
+    }
+}
+
+CreateArray(array);
+
+Console.WriteLine($"Массив: [{string.Join(",", array)}]");
+
+Console.ReadKey();
